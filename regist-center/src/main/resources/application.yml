@@ -9,7 +9,7 @@ eureka:
         defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/  #服务注册中心的配置内容，指定服务注册中心的位置
   instance:
       hostname: localhost #服务注册中心实例的主机名
-      preferIpAddress: true  #实例名称显示IP配置如下：
+      preferIpAddress: true  #实例名称显示IP配置如下
 
 
 
