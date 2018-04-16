@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/grandiflorum.iml" filepath="$PROJECT_DIR$/grandiflorum.iml" />
+      <module fileurl="file://$PROJECT_DIR$/regist-center/regist-center.iml" filepath="$PROJECT_DIR$/regist-center/regist-center.iml" />
     </modules>
   </component>
 </project>
