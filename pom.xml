@@ -7,6 +7,10 @@
     <groupId>com.ulo</groupId>
     <artifactId>grandiflorum</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>auth-center</module>
+        <module>regist-center</module>
+    </modules>
     <packaging>pom</packaging>
     <!--SpringBoot的启动项版本-->
     <parent>
