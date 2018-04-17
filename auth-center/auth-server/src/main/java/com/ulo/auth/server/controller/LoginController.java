@@ -1,14 +1,12 @@
 package com.ulo.auth.server.controller;
 
+import com.ulo.auth.server.po.User;
 import com.ulo.auth.server.service.LoginService;
 import com.ulo.auth.server.service.TokenService;
 import com.ulo.auth.server.vo.Msg;
-import com.ulo.auth.server.vo.UserInfoVo;
+import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -34,17 +32,35 @@ public class LoginController {
      * @return
      */
     @RequestMapping(value = "/getToken",method = RequestMethod.POST)
-    public Msg login(HttpServletRequest request, @RequestBody UserInfoVo userInfoVo){
+    public Msg login(HttpServletRequest request, @RequestBody User user){
 
         //1.验证userName和Password
-        Msg login_msg  = loginService.validateLogin(userInfoVo);
+        Msg login_msg  = loginService.validateLogin(user);
+        Msg token_msg = new Msg();
 
+        if(login_msg.isFlag()){
             //2.创建Token
-        Msg token_msg = tokenService.createToken(login_msg);
+            token_msg = tokenService.createToken(login_msg);
+        }else{
+            return login_msg;
+        }
 
         return token_msg;
     }
 
+
+    /**
+     * 解析Token
+     * @param
+     * @return
+     */
+    @RequestMapping(value = "/parseToken/{token}",method = RequestMethod.GET)
+    public Claims parseJWT(HttpServletRequest request,@PathVariable("token") String token){
+
+        Claims claims = tokenService.parseJWT(token);
+
+        return claims;
+    }
 
 
 }

@@ -21,14 +21,14 @@ public class UserRole implements Serializable {
     private String userName;
 
     @Column(name = "role_id")
-    private String roleId;
+    private Long roleId;
 
 
-    public String getRoleId() {
+    public Long getRoleId() {
         return roleId;
     }
 
-    public void setRoleId(String roleId) {
+    public void setRoleId(Long roleId) {
         this.roleId = roleId;
     }
 

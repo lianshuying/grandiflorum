@@ -17,7 +17,7 @@ public interface ILoginResp extends CrudRepository<User, Long> {
      * @param password
      * @return
      */
-    @Query(value = "select * from user_info  where password=?2 and user_name = ?1 ",nativeQuery = true)
+    @Query(value = "select * from system_user  where pass_word = ?2 and user_name = ?1 ",nativeQuery = true)
     List<User> findByUserNameAndPassword(String userName, String password);
 
 }

@@ -13,13 +13,13 @@ public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name="name")
     private String name;//真实名称
 
-    @Column(name="password")
-    private String password;
+    @Column(name="pass_word")
+    private String passWord;
 
     @Column(name=" user_name ")
     private String userName;//用户名
@@ -28,11 +28,11 @@ public class User implements Serializable {
     private String reputation; //名誉封号
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -44,12 +44,12 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPassWord() {
+        return passWord;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassWord(String passWord) {
+        this.passWord = passWord;
     }
 
     public String getUserName() {
@@ -67,7 +67,5 @@ public class User implements Serializable {
     public void setReputation(String reputation) {
         this.reputation = reputation;
     }
-
-
 }
 

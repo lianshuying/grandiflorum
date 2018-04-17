@@ -3,7 +3,6 @@ package com.ulo.auth.server.service;
 import com.ulo.auth.server.dao.ILoginResp;
 import com.ulo.auth.server.po.User;
 import com.ulo.auth.server.vo.Msg;
-import com.ulo.auth.server.vo.UserInfoVo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +16,12 @@ public class LoginService {
     private static Logger log = LoggerFactory.getLogger(LoginService.class);
 
     @Autowired
-    private ILoginResp _iLoginResp;
+    private ILoginResp iLoginResp;
 
-    public Msg validateLogin( UserInfoVo userInfoVo) {
+    public Msg validateLogin(User user) {
 
         Msg msg = new Msg();
-        List<User> list = _iLoginResp.findByUserNameAndPassword(userInfoVo.getUserName(),userInfoVo.getPassWord());
+        List<User> list = iLoginResp.findByUserNameAndPassword(user.getUserName(),user.getPassWord());
                 if(list.size()==0){//用户不存在
                     msg.setCode("404");
                     msg.setFlag(false);

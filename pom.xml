@@ -10,6 +10,8 @@
     <modules>
         <module>auth-center</module>
         <module>regist-center</module>
+        <module>system-api</module>
+        <module>system-api</module>
     </modules>
     <packaging>pom</packaging>
     <!--SpringBoot的启动项版本-->

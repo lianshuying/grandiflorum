@@ -3,9 +3,6 @@ package com.ulo.auth.server.vo;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 返回信息封装
- */
 public class Msg {
 
     private String code = "200";//状态码
@@ -19,6 +16,8 @@ public class Msg {
     private Map<String,Object> map;//返回的Map
 
     private String msg;//返回的信息
+
+
 
     public String getCode() {
         return code;

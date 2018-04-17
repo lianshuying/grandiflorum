@@ -17,10 +17,10 @@ public class Menu {
     private String name;//菜单名称
 
     @Column(name="node")
-    private Integer node;//节点
+    private String node;//节点
 
     @Column(name="parentNode")
-    private Integer parentNode;//父节点
+    private String parentNode;//父节点
 
     @Column(name="url")
     private String url;//菜单的Url
@@ -30,6 +30,9 @@ public class Menu {
 
     @Column(name="type")
     private String Type;//1标识菜单，2标识菜单功能curd:其父级必须是菜单
+
+    @Column(name="code")
+    private String code; //权限代码
 
     public Long getId() {
         return id;
@@ -47,19 +50,19 @@ public class Menu {
         this.name = name;
     }
 
-    public Integer getNode() {
+    public String getNode() {
         return node;
     }
 
-    public void setNode(Integer node) {
+    public void setNode(String node) {
         this.node = node;
     }
 
-    public Integer getParentNode() {
+    public String getParentNode() {
         return parentNode;
     }
 
-    public void setParentNode(Integer parentNode) {
+    public void setParentNode(String parentNode) {
         this.parentNode = parentNode;
     }
 
@@ -79,12 +82,19 @@ public class Menu {
         this.status = status;
     }
 
-
     public String getType() {
         return Type;
     }
 
     public void setType(String type) {
         Type = type;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

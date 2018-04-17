@@ -4,13 +4,13 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.bind.DatatypeConverter;
 import java.security.Key;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Token的生成类
@@ -19,20 +19,20 @@ import java.util.Date;
 public class JwtTokenService {
 
     //秘钥
-    @Value("${Jwt.base64Secret}")
-    private  static String base64Secret ;
+//    @Value("${Jwt.base64Secret}")
+    private  static String base64Secret  = "MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=";
     //token时间
-    @Value("${Jwt.expiresSecond}")
-    private static int expiresSecond;
+//    @Value("${Jwt.expiresSecond}")
+    private static int expiresSecond = 172800000;
 
     /**
      * 创建Token
      * @param username
      * @param roles
-     * @param privileges
+     * @param menus
      * @return
      */
-    public static String createJWT(String username, String roles, String privileges) {
+    public static String createJWT(Long userId, String username, List<Long> roles, List<Long> menus) {
         SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
 
         long nowMillis = System.currentTimeMillis();
@@ -44,9 +44,10 @@ public class JwtTokenService {
 
         //添加构成JWT的参数
         JwtBuilder builder = Jwts.builder().setHeaderParam("typ", "JWT")
+                .claim("user_id", userId)
                 .claim("user_name", username)
                 .claim("user_role", roles)
-                .claim("user_privilege", privileges)
+                .claim("user_menus", menus)
                 .signWith(signatureAlgorithm, signingKey);
         //添加Token过期时间
         if (expiresSecond >= 0) {
