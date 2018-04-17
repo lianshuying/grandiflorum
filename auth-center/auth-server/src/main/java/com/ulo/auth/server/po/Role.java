@@ -3,7 +3,7 @@ package com.ulo.auth.server.po;
 import javax.persistence.*;
 
 /**
- * 系统角色菜单表
+ * 系统角色表
  */
 @Entity
 @Table(name="SYSTEM_ROLE")
@@ -14,27 +14,18 @@ public class Role {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name="role_no")
-    private String roleNo;
-
     @Column(name="role_name")
     private String roleName;
 
+    @Column(name="description")
+    private String description;
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getRoleNo() {
-        return roleNo;
-    }
-
-    public void setRoleNo(String roleNo) {
-        this.roleNo = roleNo;
     }
 
     public String getRoleName() {
@@ -43,5 +34,14 @@ public class Role {
 
     public void setRoleName(String roleName) {
         this.roleName = roleName;
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

@@ -27,9 +27,6 @@ public class User implements Serializable {
     @Column(name=" reputation ")
     private String reputation; //名誉封号
 
-    @Column(name=" user_atta_id ")
-    private Long userAttaId;  //用户其他信息Id
-
 
     public long getId() {
         return id;
@@ -71,12 +68,6 @@ public class User implements Serializable {
         this.reputation = reputation;
     }
 
-    public Long getUserAttaId() {
-        return userAttaId;
-    }
 
-    public void setUserAttaId(Long userAttaId) {
-        this.userAttaId = userAttaId;
-    }
 }
 

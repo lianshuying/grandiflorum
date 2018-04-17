@@ -12,7 +12,13 @@ spring:
     hibernate:
       ddl-auto: update
 
+
 Jwt:
     base64Secret: MDk4ZjZiY2Q0NjIxZDM3M2NhZGU0ZTgzMjYyN2I0ZjY=
     expiresSecond: 172800000
 
+## Naming strategy
+#spring.jpa.hibernate.naming-strategy = org.hibernate.cfg.ImprovedNamingStrategy
+#
+## stripped before adding them to the entity manager)
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5Dialect
