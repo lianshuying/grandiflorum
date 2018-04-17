@@ -10,7 +10,6 @@ import java.io.Serializable;
 @Table(name="SYSTEM_USER_ROLE")
 public class UserRole implements Serializable {
 
-
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
