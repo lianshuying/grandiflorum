@@ -58,7 +58,6 @@ public class LoginController {
     public Claims parseJWT(HttpServletRequest request,@PathVariable("token") String token){
 
         Claims claims = tokenService.parseJWT(token);
-
         return claims;
     }
 
