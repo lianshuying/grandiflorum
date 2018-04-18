@@ -10,6 +10,7 @@
     <modules>
         <module>auth-center</module>
         <module>regist-center</module>
+        <module>operation-center</module>
     </modules>
     <packaging>pom</packaging>
     <!--SpringBoot的启动项版本-->

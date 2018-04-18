@@ -9,6 +9,7 @@
         <module name="auth-client" />
         <module name="auth-common" />
         <module name="auth-server" />
+        <module name="operation-center" />
         <module name="regist-center" />
       </profile>
     </annotationProcessing>
@@ -21,6 +22,7 @@
       <module name="authcenter" target="1.8" />
       <module name="authcommon" target="1.8" />
       <module name="grandiflorum" target="1.8" />
+      <module name="operation-center" target="1.8" />
       <module name="regist-center" target="1.8" />
       <module name="system-api" target="1.8" />
       <module name="systemapi" target="1.8" />
