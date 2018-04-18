@@ -10,8 +10,6 @@
     <modules>
         <module>auth-center</module>
         <module>regist-center</module>
-        <module>system-api</module>
-        <module>system-api</module>
     </modules>
     <packaging>pom</packaging>
     <!--SpringBoot的启动项版本-->
@@ -32,13 +30,8 @@
 
     <!--架包依赖-->
     <dependencies>
-        <!--日志-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.16.20</version>
-            <scope>provided</scope>
-        </dependency>
+
+
     </dependencies>
 
     <!--依赖管理：统一spring-cloud的依赖，版本是：Camden.SR3-->
