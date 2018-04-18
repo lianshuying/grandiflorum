@@ -19,18 +19,6 @@ public class MyBatisConfig {
         //  bean.setDataSource(dataSource());
         bean.setTypeAliasesPackage("com.ulo.operation.center.entity");// <!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
 
-        //分页插件设置
-//        PageHelper pageHelper = new PageHelper();
-//        Properties properties = new Properties();
-//        properties.setProperty("reasonable", "true");
-//        properties.setProperty("supportMethodsArguments", "true");
-//        properties.setProperty("returnPageInfo", "check");
-//        properties.setProperty("params", "count=countSql");
-//        pageHelper.setProperties(properties);
-//
-//        //添加分页插件
-//        bean.setPlugins(new Interceptor[]{ pageHelper });
-
         //添加XML目录
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
         try {

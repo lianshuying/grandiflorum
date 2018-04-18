@@ -1,19 +1,23 @@
 package com.ulo.operation.center.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /**
  * 系统用户表
  */
-
+@Table(name = "system_user")
 public class User implements Serializable {
-
+    @Id
     private Long id;
 
     private String name;//真实名称
 
+    @Column(name= "pass_word")
     private String passWord;
-
+    @Column(name= "user_name")
     private String userName;//用户名
 
     private String reputation; //名誉封号
