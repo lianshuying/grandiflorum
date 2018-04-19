@@ -7,6 +7,8 @@ import com.ulo.auth.server.po.UserRole;
 import com.ulo.auth.server.vo.Msg;
 import io.jsonwebtoken.Claims;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -25,9 +27,12 @@ public class TokenService {
     @Autowired
     private RoleMenuService roleMenuService;
 
-    public Msg createToken(Msg login_msg) {
+    @Autowired
+    RedisTemplate<String,String> redisTemplate;
 
-             Msg msg = new Msg();
+    @Cacheable(value = "token",keyGenerator = "keyGenerator")
+    public String createToken(Msg login_msg) {
+
              User user = (User) login_msg.getObj();
              //1.查询用户的角色
               List<UserRole> roles = userRoleService.findByUserId(user.getId());
@@ -44,15 +49,22 @@ public class TokenService {
                                 });
                 });
              //将获取到的menus进行赛选去重复
-             List<Long> newList = new ArrayList(new HashSet(menus));
+                 List<Long> newList = new ArrayList(new HashSet(menus));
 
-            String token = jwtTokenService.createJWT( user.getId(),user.getUserName(),roleIds,newList);
-            msg.setObj(token);
-        return msg;
+                String token = jwtTokenService.createJWT( user.getId(),user.getUserName(),roleIds,newList);
+
+                 redisTemplate.opsForValue().set("vayne",token);
+
+        return token;
     }
+
 
     public Claims parseJWT(String token) {
 
               return jwtTokenService.parseJWT(token);
     }
+
+
+
+
 }

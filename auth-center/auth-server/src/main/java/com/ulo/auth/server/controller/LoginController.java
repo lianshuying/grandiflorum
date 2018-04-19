@@ -40,7 +40,9 @@ public class LoginController {
 
         if(login_msg.isFlag()){
             //2.创建Token
-            token_msg = tokenService.createToken(login_msg);
+            String token = tokenService.createToken(login_msg);
+
+            token_msg.setObj(token);
         }else{
             return login_msg;
         }
