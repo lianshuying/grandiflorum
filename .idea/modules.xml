@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/auth-center/auth-server/auth-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/grandiflorum.iml" filepath="$PROJECT_DIR$/grandiflorum.iml" />
       <module fileurl="file://$PROJECT_DIR$/operation-center/operation-center.iml" filepath="$PROJECT_DIR$/operation-center/operation-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-center/rabbit-received/rabbit-received.iml" filepath="$PROJECT_DIR$/rabbitmq-center/rabbit-received/rabbit-received.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-center/rabbit-send/rabbit-send.iml" filepath="$PROJECT_DIR$/rabbitmq-center/rabbit-send/rabbit-send.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq-center/rabbitmq-center.iml" filepath="$PROJECT_DIR$/rabbitmq-center/rabbitmq-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/regist-center/regist-center.iml" filepath="$PROJECT_DIR$/regist-center/regist-center.iml" />
     </modules>
   </component>

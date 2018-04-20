@@ -16,6 +16,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import java.lang.reflect.Method;
 
+/**
+ * https://www.cnblogs.com/ASPNET2008/p/8733087.html  redis的改动
+ */
 @Configuration
 @EnableCaching//启用缓存
 public class RedisConfiguration extends CachingConfigurerSupport {

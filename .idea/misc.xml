@@ -8,6 +8,8 @@
         <option value="$PROJECT_DIR$/auth-center/auth-server/pom.xml" />
         <option value="$PROJECT_DIR$/admin-center/pom.xml" />
         <option value="$PROJECT_DIR$/operation-center/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-center/rabbit-send/pom.xml" />
+        <option value="$PROJECT_DIR$/rabbitmq-center/rabbit-received/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

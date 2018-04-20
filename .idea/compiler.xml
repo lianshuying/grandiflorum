@@ -10,6 +10,9 @@
         <module name="auth-common" />
         <module name="auth-server" />
         <module name="operation-center" />
+        <module name="rabbit-received" />
+        <module name="rabbit-send" />
+        <module name="rabbitmq-center" />
         <module name="regist-center" />
       </profile>
     </annotationProcessing>
@@ -23,6 +26,9 @@
       <module name="authcommon" target="1.8" />
       <module name="grandiflorum" target="1.8" />
       <module name="operation-center" target="1.8" />
+      <module name="rabbit-received" target="1.8" />
+      <module name="rabbit-send" target="1.8" />
+      <module name="rabbitmq-center" target="1.8" />
       <module name="regist-center" target="1.8" />
       <module name="system-api" target="1.8" />
       <module name="systemapi" target="1.8" />
