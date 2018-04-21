@@ -13,6 +13,7 @@
         <module>operation-center</module>
         <module>rabbitmq-center</module>
         <module>socket-center</module>
+        <module>api-gateway</module>
     </modules>
     <packaging>pom</packaging>
     <!--SpringBoot的启动项版本-->

@@ -1,0 +1,82 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: after_route
+        uri: http://example.org
+        predicates:
+        - After=2018-04-21T11:19:00.789-07:00[America/Denver]  #This route matches any request after Jan 20, 2017 17:42 Mountain Time (Denver).
+      - id: before_route
+        uri: http://example.org
+        predicates:
+        - Before=2019-01-20T17:42:47.789-07:00[America/Denver] #This route matches any request before Jan 20, 2017 17:42 Mountain Time (Denver).
+      - id: between_route
+        uri: http:www.baidu.com
+        predicates:
+        - Betweeen=2017-01-20T17:42:47.789-07:00[America/Denver], 2017-01-21T17:42:47.789-07:00[America/Denver]
+      - id: cookie_route
+        uri: http://example.org
+        predicates:
+        - Cookie=chocolate, ch.p #Cookie路由谓词工厂接受两个参数，即cookie名称和正则表达式。 此谓词匹配具有给定名称并且值与正则表达式匹配的cookie。
+#      - id: header_route
+#        uri: http://example.org
+#        predicates:
+#        - Header=X-Request-Id, \d+  #如果请求有一个名为X-Request-Id的标头，它的值与\ d +正则表达式（具有一个或多个数字的值）相匹配，则此路线匹配。
+      - id: host_route
+        uri: http://example.org
+        predicates:
+        - Host=**.somehost.org  #如果请求具有值为www.somehost.org或beta.somehost.org的主机标头，则此路线将匹配。
+      - id: method_route
+        uri: http://example.org
+        predicates:
+        - Method=GET
+      - id: host_route
+        uri: http://example.org
+        predicates:
+        - Path=/foo/{segment}
+      - id: query_route
+        uri: http://example.org
+        predicates:    # 如果请求包含baz查询参数，则此路线将匹配。
+        - Query=baz
+     - id: query_route   # 如果请求包含一个foo查询参数，其值与ba相匹配，则该路由匹配。 正则表达式，所以bar和baz会匹配。
+       uri: http://example.org
+       predicates:
+       - Query=foo, ba.
+
+     - id: remoteaddr_route  #  如果请求的远程地址是例如192.168.1.10，则该路由匹配。
+       uri: http://example.org
+       predicates:
+       - RemoteAddr=192.168.1.1/24
+
+
+     - id: prefixpath_route  #这将前缀/ mypath作为所有匹配请求的路径。 所以/ hello的请求会被发送到/ mypath / hello。
+       uri: http://example.org
+       filters:
+       - PrefixPath=/mypath
+
+     - id: preserve_host_route  #这将前缀/ mypath作为所有匹配请求的路径。 所以/ hello的请求会被发送到/ mypath / hello。
+       uri: http://example.org
+       filters:
+       - PreserveHostHeader
+
+     - id: requestratelimiter_route
+       uri: http://example.org
+       filters:
+       - RequestRateLimiter=10, 20, #{@userKeyResolver}
+
+     - id: prefixpath_route
+       uri: http://example.org
+       filters:
+       - RedirectTo=302, http://acme.org
+
+     - id: removerequestheader_route  #这将在X-Request-Foo头部向下游发送之前删除。
+       uri: http://example.org
+       filters:
+       - RemoveRequestHeader=X-Request-Foo
+
+     - id: save_session  #如果您将Spring Security与Spring Session集成在一起，并且希望确保安全细节已被转发到远程进程，这至关重要。
+       uri: http://example.org
+       predicates:
+       - Path=/foo/**
+       filters:
+       - SaveSession
