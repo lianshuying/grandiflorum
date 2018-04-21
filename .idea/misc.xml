@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/operation-center/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-center/rabbit-send/pom.xml" />
         <option value="$PROJECT_DIR$/rabbitmq-center/rabbit-received/pom.xml" />
+        <option value="$PROJECT_DIR$/socket-center/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

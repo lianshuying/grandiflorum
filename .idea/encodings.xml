@@ -11,6 +11,7 @@
     <file url="file://$PROJECT_DIR$/rabbitmq-center/rabbit-received" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/rabbitmq-center/rabbit-send" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/regist-center" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/socket-center" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

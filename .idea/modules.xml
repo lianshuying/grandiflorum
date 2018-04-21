@@ -12,6 +12,7 @@
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-center/rabbit-send/rabbit-send.iml" filepath="$PROJECT_DIR$/rabbitmq-center/rabbit-send/rabbit-send.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-center/rabbitmq-center.iml" filepath="$PROJECT_DIR$/rabbitmq-center/rabbitmq-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/regist-center/regist-center.iml" filepath="$PROJECT_DIR$/regist-center/regist-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/socket-center/socket-center.iml" filepath="$PROJECT_DIR$/socket-center/socket-center.iml" />
     </modules>
   </component>
 </project>
