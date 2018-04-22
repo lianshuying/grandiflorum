@@ -5,8 +5,10 @@
       <module fileurl="file://$PROJECT_DIR$/api-gateway/api-gateway.iml" filepath="$PROJECT_DIR$/api-gateway/api-gateway.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-center.iml" filepath="$PROJECT_DIR$/auth-center/auth-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-client/auth-client.iml" filepath="$PROJECT_DIR$/auth-center/auth-client/auth-client.iml" />
-      <module fileurl="file://$PROJECT_DIR$/auth-center/auth-common/auth-common.iml" filepath="$PROJECT_DIR$/auth-center/auth-common/auth-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/auth-center/auth-server/auth-server.iml" filepath="$PROJECT_DIR$/auth-center/auth-server/auth-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-center/config-center.iml" filepath="$PROJECT_DIR$/config-center/config-center.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-center/config-client/config-client.iml" filepath="$PROJECT_DIR$/config-center/config-client/config-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-center/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-center/config-server/config-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/grandiflorum.iml" filepath="$PROJECT_DIR$/grandiflorum.iml" />
       <module fileurl="file://$PROJECT_DIR$/operation-center/operation-center.iml" filepath="$PROJECT_DIR$/operation-center/operation-center.iml" />
       <module fileurl="file://$PROJECT_DIR$/rabbitmq-center/rabbit-received/rabbit-received.iml" filepath="$PROJECT_DIR$/rabbitmq-center/rabbit-received/rabbit-received.iml" />
